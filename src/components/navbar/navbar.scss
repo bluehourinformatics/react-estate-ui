@@ -1,9 +1,11 @@
 @import "../../responsive.scss";
+
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: green;
 
   a {
     transition: all 0.4s ease;
@@ -20,15 +22,15 @@ nav {
   .left {
     flex: 3;
     display: flex;
-    gap: 50px;
     align-items: center;
+    gap: 50px;
 
     .logo {
       font-weight: bold;
       font-size: 20px;
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
 
       img {
         width: 28px;
@@ -71,52 +73,55 @@ nav {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        margin-right: 10px;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      span {
+        @include sm {
+          display: none;
+        }
+      }
+
+      .profile {
+        padding: 12px 24px;
+        background-color: #fece51;
+        cursor: pointer;
+        border: none;
+        position: relative;
+
+        .notification {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
 
-    span {
-      @include sm {
-        display: none;
-      }
-    }
-    .profile {
-      padding: 12px 24px;
-      background-color: #fece51;
-      cursor: pointer;
-      border: none;
-      position: relative;
-
-      .notification {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        background-color: red;
-        color: white;
-        border-radius: 50%;
-        width: 26px;
-        height: 26px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    .signup {
+    .register {
       background-color: #fece51;
     }
 
     .menuIcon {
       display: none;
       z-index: 999;
-      @include sm {
-        display: inline;
-      }
 
       img {
         width: 36px;
         height: 36px;
         cursor: pointer;
+      }
+
+      @include sm {
+        display: inline;
       }
     }
 
